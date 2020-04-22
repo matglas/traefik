@@ -358,7 +358,7 @@ The middlewares will take effect only if the rule matches, and before forwarding
       [http.routers.my-router]
         rule = "Path(`/foo`)"
         # declared elsewhere
-        middlewares = ["authentication"]
+        middlewares = ["authentication","redirect"]
         service = "service-foo"
     ```
 
@@ -371,6 +371,7 @@ The middlewares will take effect only if the rule matches, and before forwarding
           # declared elsewhere
           middlewares:
           - authentication
+          - redirect
           service: service-foo
     ```
 
